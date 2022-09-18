@@ -1,0 +1,128 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.bar{
+  margin:0 auto;
+  width:575px;
+  border-radius:30px;
+  border:1px solid #dcdcdc;
+  margin-bottom: 20px;
+}
+.bar:hover{
+  box-shadow: 1px 1px 8px 1px #dcdcdc;
+}
+.bar:focus-within{
+  /* box-shadow: 1px 1px 8px 1px #dcdcdc; */
+  /* outline:none; */
+}
+.searchbar{
+  height: 45px;
+  width: 500px;
+  font-size: 16px;
+  outline: none;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-right: none;
+  border-top-color: #dcdcdc;
+  border-top-width: 0px;
+  border-bottom-width: 0px;
+  border-left-color: #dcdcdc;
+  border-left-width: 1px;
+  
+}
+.voice{
+  height:20px;
+  position:relative;
+  top:5px;
+  left:10px;
+}
+.textAlignCenter{
+  text-align: center;
+}
+.cellParent{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border: 0.5px solid #c3c3c3;
+  margin: 40px;
+  border-left-width: 8px;
+}
+.margin0{
+  margin: 0px;
+}
+.avatar{
+  border-radius: 50px;
+  padding: 15px;
+}
+.name{
+  color: #3F484D;
+  font-weight: bold;
+}
+.nameId{
+  color: #E45E48;
+  font-weight: bold;
+  font-size: 12px;
+}
+.grayColor{
+  color: #6e8792;
+}
+.assistant{
+  font-weight: bold;
+  font-size: 13px;
+}
+.font-size-13{
+  font-size: 13px;
+}
+.avatarWithTextParent{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.listParent{
+  overflow-y: scroll;
+  height: 80vh;
+}
+.loader{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.width20percent{
+  width: 20%;
+}

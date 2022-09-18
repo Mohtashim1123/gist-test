@@ -56,18 +56,30 @@ function App() {
         {loading
           ?
           <div className='loader'>
-            <img src='https://i.gifer.com/origin/34/34338d26023e5515f6cc8969aa027bca_w200.gif' height={50} width={50} alt="loader"/>
+            <img src='https://i.gifer.com/origin/34/34338d26023e5515f6cc8969aa027bca_w200.gif' height={50} width={50} alt="loader" />
           </div>
           :
 
-          list.length === 0 ? <p className='textAlignCenter'>No record found</p> : list.map(item => (
+          list.length === 0 ? <p className='textAlignCenter'>No record found</p> : list.map((item, index) => (
             <div key={item.id} className='cellParent'>
               <div className='avatarWithTextParent width20percent'>
                 <div>
-                  <img className='avatar' src='https://avatars.githubusercontent.com/u/515861?v=4' alt={item?.owner?.login} height={50} width={50} />
+                  {index === list.length - 1 || index === list.length - 2 || index === list.length - 3 ?
+                    <a href={item.forks_url} target="_blank">
+                      <img className='avatar' src='https://avatars.githubusercontent.com/u/515861?v=4' alt={item?.owner?.login} height={50} width={50} />
+                    </a>
+                    :
+                    <img className='avatar' src='https://avatars.githubusercontent.com/u/515861?v=4' alt={item?.owner?.login} height={50} width={50} />
+                  }
                 </div>
                 <div className='width20percent'>
-                  <p className='margin0 name'>{item?.owner?.login}</p>
+                  {index === list.length - 1 || index === list.length - 2 || index === list.length - 3 ?
+                    <a href={item.forks_url} target="_blank">
+                      <p className='margin0 name'>{item?.owner?.login}</p>
+                    </a>
+                    :
+                    <p className='margin0 name'>{item?.owner?.login}</p>
+                  }
                   <p className='margin0 nameId'>@{item?.owner?.login}</p>
                 </div>
               </div>
@@ -80,9 +92,9 @@ function App() {
                 <p className='margin0 grayColor font-size-13'>{item?.owner?.login}@gmail.com</p>
               </div>
               <div className='width20percent'>
-                {Object.entries(item?.files)?.map((item,index) => (
-                  badges[item[1].type] &&  <img key={index} src={badges[item[1].type]} height={30} width={50} alt="badge"/>
-                  ))
+                {Object.entries(item?.files)?.map((item, index) => (
+                  badges[item[1].type] && <img key={index} src={badges[item[1].type]} height={30} width={50} alt="badge" />
+                ))
                 }
               </div>
             </div>))}

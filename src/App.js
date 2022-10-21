@@ -23,6 +23,8 @@ function App() {
         if (response.status === 200) {
           setList(response.data)
           setLoading(false)
+        } else {
+          setLoading(false)
         }
       })
       .catch((error) => {
@@ -47,7 +49,7 @@ function App() {
 
   return (
     <div>
-      <h1 className='textAlignCenter'>Gist API test</h1>
+      <h1 style={{fontSize:'13px'}} className='textAlignCenter'>Gist API test</h1>
       <div className="bar">
         <input className="searchbar" type="text" placeholder="Search Username" onChange={(e) => debounced(e.target.value)} />
         <img className="voice" src="https://www.freeiconspng.com/uploads/search-icon-png-5.png" alt='search' />

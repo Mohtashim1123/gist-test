@@ -106,4 +106,30 @@ function App() {
   );
 }
 
+const types = ['Cash', 'Credit Card', 'Bitcoin'];
+function ToggleGroup() {
+  const [active, setActive] = useState(types[0]);
+  return (
+    <ButtonGroup>
+      {types.map(type => (
+        <ButtonToggle
+          key={type}
+          active={active === type}
+          onClick={() => setActive(type)}
+        >
+          {type}
+        </ButtonToggle>
+      ))}
+    </ButtonGroup>
+  );
+}
+
+const Button = ({ onClick, children }) => {
+  return (
+    <button type="button" onClick={onClick}>
+      {children}
+    </button>
+  );
+};
+
 export default App;
